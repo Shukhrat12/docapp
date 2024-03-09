@@ -1,31 +1,25 @@
 import mongoose from "mongoose";
 
 const retseptSchema = mongoose.Schema({
-    // dori: {
-    //     type: String,
-    //     required: true
-    // },
-    // doza: {
-    //     type: String,
-    //     required: true
-    // },
-    // takrorlanish: {
-    //     type: String,
-    //     required: true
-    // },
-    // davomiylik: {
-    //     type: String,
-    //     required: true
-    // },
-    // eslatma: {
-    //     type: String
-    // }
-
-    dorini_nomi: String,
-    dozasi: String,
-    kunlik_takrorlanishi: String,
-    davomiyligi: String,
-    eslatma: String,
+    dorini_nomi: {
+        type: String,
+        required: true
+    },
+    dozasi: {
+        type: String,
+         required: true
+    },
+    kunlik_takrorlanishi: {
+        type: String,
+        required: true
+    },
+    davomiyligi: {
+        type: String,
+        required: true
+    },
+    eslatma: {
+        type: String
+    }
 })
 
 export default mongoose.model("retsepts", retseptSchema)

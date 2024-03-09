@@ -1,15 +1,14 @@
 import app from './index.js'
 import mongoose from 'mongoose'
+import dotenv from 'dotenv'
 
-const PORT = 3001
+dotenv.config()
 
-const MONGO_URL=""
-
-mongoose.connect(MONGO_URL)
+mongoose.connect(process.env.MONGO_URL)
 .then(() => {
     console.log("MongoDB running")
-    app.listen(PORT, () => {
-        console.log(`Server is running successfully on port: ${PORT}`)
+    app.listen(process.env.PORT, () => {
+        console.log(`Server is running successfully on port: ${process.env.PORT}`)
     })
 
 })

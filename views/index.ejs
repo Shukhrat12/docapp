@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocApp</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to DocApp</h1>
+        <div id="prescriptionForm">
+            <h2>Create Prescription</h2>
+
+            <form id="createPrescriptionForm">
+                <label for="medicationName">Medication Name:</label>
+                <input type="text" id="medicationName" required>
+                <label for="dosage">Dosage:</label>
+                <input type="text" id="dosage" required>
+                <label for="frequency">Frequency:</label>
+                <input type="text" id="frequency" required>
+                <label for="duration">Duration:</label>
+                <input type="text" id="duration" required>
+                <label for="notes">Notes:</label>
+                <textarea id="notes" rows="4"></textarea>
+                <button type="submit">Create Prescription</button>
+            </form>
+
+        </div>
+        <div id="prescriptionList">
+            <h2>Prescriptions</h2>
+            <ul id="item-list" class="list-group pb-5">
+            <% items.map( function(item) { %>
+                  <li>
+                    <strong>Dorini nomi:</strong> <%=item.dorini_nomi%><br>
+                    <strong>Dozasi:</strong> <%=item.dozasi%><br>
+                    <strong>Kunlik takrorlanishi:</strong> <%=item.kunlik_takrorlanishi%><br>
+                    <strong>Davomiyligi:</strong> <%=item.davomiyligi%><br>
+                    <strong>Eslatma:</strong><%=item.eslatma%><br><br>
+                </li>
+            <% }) %>
+        </div>
+    </div>
+</body>
+</html>
